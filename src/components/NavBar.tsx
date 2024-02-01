@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Binary, Github, Twitter } from 'lucide-react';
+import { Binary, Github } from 'lucide-react';
 import { Button } from './ui/button';
 
 export default function () {
