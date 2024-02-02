@@ -1,10 +1,14 @@
 import BinCard from "@/components/BinCard";
+import BinSkeleton from "@/components/BinSkeleton";
 import TagsContainer from "@/components/TagsContainer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
+import useFetch from "@/hooks/useFetch";
 import { Search } from 'lucide-react';
 
 export default function ViewPage() {
+    const { isLoading, data } = useFetch('bin');
+
     return (
         <div>
             <div className="flex items-center gap-3">
@@ -17,7 +21,13 @@ export default function ViewPage() {
                 <TagsContainer></TagsContainer>
             </div>
             <div className="mt-10 mb-10 flex flex-col gap-5">
-                <BinCard></BinCard>
+                {isLoading ? (
+                    <BinSkeleton></BinSkeleton>
+                ) : (
+                    data.map(bin => (
+                        <BinCard title={bin.title} description={bin.description}></BinCard>
+                    ))
+                )}
             </div>
         </div>
     )

@@ -10,7 +10,7 @@ export default function TagsContainer({ }: Props) {
             <ToggleGroupItem value="daa" className="flex gap-3"><Target size={18} /> DAA</ToggleGroupItem>
             <ToggleGroupItem value="designpattern" className="flex gap-3"><Code size={18} /> Design Pattern</ToggleGroupItem>
             <ToggleGroupItem value="database" className="flex gap-3"><Database size={18} /> DBMS</ToggleGroupItem>
-            <ToggleGroupItem value="database" className="flex gap-3"><Laptop size={18} /> OS</ToggleGroupItem>
+            <ToggleGroupItem value="os" className="flex gap-3"><Laptop size={18} /> OS</ToggleGroupItem>
         </ToggleGroup>
 
     )
