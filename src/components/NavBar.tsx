@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 
 export default function () {
     return (
-        <div className='py-10'>
+        <div className='md:py-10 py-3'>
             <div className='flex justify-between' >
                 <div>
                     <Link to='/' className='text-xl flex items-center font-bold'>/dumpBin <Binary /></Link>

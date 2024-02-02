@@ -20,7 +20,7 @@ export default function HomePage() {
             <div className='mt-5 flex gap-5 text-sm flex-wrap'>
                 <TagsContainer></TagsContainer>
             </div>
-            <div className='mt-10'>
+            <div className='md:mt-10 my-5 '>
                 <Button onClick={() => { toast({ description: 'You are not authorized to Create Bin', variant: 'destructive' }) }}>Create Bin</Button>
             </div>
         </div>
