@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster"
 export default function RootLayout() {
     return (
         <div className='flex flex-col items-center'>
-            <Toaster />
             <div className='max-w-[60rem] px-5 lg:px-0 mt-5 w-full'>
+                <Toaster />
                 <header>
                     <NavBar></NavBar>
                 </header>
