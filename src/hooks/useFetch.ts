@@ -17,7 +17,9 @@ const useFetch = (collectionName: string) => {
         const fetchData = async () => {
             try {
                 const querySnapshot = await getDocs(collection(db, collectionName));
-                const fetchedData = querySnapshot.docs.map<Bin>(doc => ({ id: doc.id, ...doc.data() }));
+                const fetchedData = querySnapshot.docs.map<Bin>(doc => {
+                    return { id: doc.id, title: doc.data().title, description: doc.data().description, date: doc.data().second }
+                });
                 setData(fetchedData);
             } catch (e) {
                 console.error("Error fetching data:", e);

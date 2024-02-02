@@ -24,8 +24,8 @@ export default function ViewPage() {
                 {isLoading ? (
                     <BinSkeleton></BinSkeleton>
                 ) : (
-                    data.map(bin => (
-                        <BinCard title={bin.title} description={bin.description}></BinCard>
+                    data.map((bin, index) => (
+                        <BinCard title={bin.title} key={index} description={bin.description}></BinCard>
                     ))
                 )}
             </div>
