@@ -11,12 +11,13 @@ import { useToast } from "@/components/ui/use-toast"
 
 type Props = {
     title: string,
-    description: string
+    description: string,
+    date: string,
+    tag: string
 }
 
-export default function BinCard({ title, description }: Props) {
+export default function BinCard({ title, description, date, tag }: Props) {
     const { toast } = useToast();
-
     return (
         <Card className="hover:bg-[#27272a39] transition-colors">
             <CardHeader>
@@ -36,11 +37,11 @@ export default function BinCard({ title, description }: Props) {
                 </CardTitle>
                 <CardDescription className="flex gap-2">
                     <Calendar size={18}></Calendar>
-                    February 1th, 2024
+                    {date}
                 </CardDescription>
             </CardHeader>
             <CardFooter>
-                <span className="bg-[#27272A] px-3 py-1 text-sm rounded-full">Database</span>
+                <span className="bg-[#27272A] px-3 py-1 text-sm rounded-full">{tag}</span>
             </CardFooter>
         </Card>
 

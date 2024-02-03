@@ -10,11 +10,13 @@ type Bin = {
     id: string,
     date: string,
     title: string,
-    description: string
+    description: string,
+    tag: string
 }
 
 export default function ViewPage() {
     const { isLoading, data } = useFetchBins('bin');
+    console.log(data)
 
     return (
         <div>
@@ -25,14 +27,14 @@ export default function ViewPage() {
                 </Button>
             </div>
             <div className="mt-5">
-                <TagsContainer></TagsContainer>
+                <TagsContainer toggleChange={() => { }}></TagsContainer>
             </div>
             <div className="mt-10 mb-10 flex flex-col gap-5">
                 {isLoading ? (
                     <BinSkeleton></BinSkeleton>
                 ) : (
                     data.map((bin: Bin, index: number) => (
-                        <BinCard title={bin.title} key={index} description={bin.description}></BinCard>
+                        <BinCard title={bin.title} key={index} description={bin.description} tag={bin.tag} date={bin.date}></BinCard>
                     ))
                 )}
             </div>
