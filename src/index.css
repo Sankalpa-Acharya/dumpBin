@@ -52,6 +52,16 @@
 .gradient-dark{
   @apply  from-gray-100 text-transparent to-gray-500 bg-clip-text bg-gradient-to-r
 }
+.glassmorphism{
+  padding: 20px 10px;
+  /* background: rgba(0, 0, 0, 0.594); */
+  backdrop-filter: blur( 120px );
+  /* -webkit-box-shadow: -5px -10px 40px -31px rgba(107,76,235,1);
+  -moz-box-shadow: -5px -10px 40px -31px rgba(107,76,235,1);
+  box-shadow: -5px -10px 40px -31px rgba(107,76,235,1); */
+  border-radius: 10px;
+  /* border-bottom: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
 @layer base {
   * {
     @apply border-border;

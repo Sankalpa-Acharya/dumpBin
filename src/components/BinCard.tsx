@@ -22,7 +22,7 @@ export default function BinCard({ title, description, date, tag }: Props) {
         <Card className="hover:bg-[#27272a39] transition-colors">
             <CardHeader>
                 <CardTitle className="flex justify-between">
-                    <p className="gradient-dark text-gradient">{title}</p>
+                    <p className="gradient-dark text-gradient">{title.toUpperCase()}</p>
                     <div className="flex gap-3">
                         <Button onClick={() => {
                             toast({ description: 'Copied to ClipBoard' });
