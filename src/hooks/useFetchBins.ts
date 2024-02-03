@@ -9,7 +9,7 @@ type Bin = {
     description: string
 }
 
-const useFetch = (collectionName: string) => {
+const useFetchBins = (collectionName: string) => {
     const [data, setData] = useState<Bin[]>([]);
     const [isLoading, setLoading] = useState<boolean>(true);
 
@@ -34,4 +34,4 @@ const useFetch = (collectionName: string) => {
     return { isLoading, data };
 };
 
-export default useFetch;
+export default useFetchBins;

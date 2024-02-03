@@ -8,8 +8,11 @@ import {
 import { Clipboard, Calendar, Eye } from 'lucide-react'
 import { Button } from "./ui/button"
 import { useToast } from "@/components/ui/use-toast"
-// import Modal from "./Modal"
-type Props = { title: string, description: string }
+
+type Props = {
+    title: string,
+    description: string
+}
 
 export default function BinCard({ title, description }: Props) {
     const { toast } = useToast();

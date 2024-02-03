@@ -3,11 +3,18 @@ import BinSkeleton from "@/components/BinSkeleton";
 import TagsContainer from "@/components/TagsContainer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
-import useFetch from "@/hooks/useFetch";
+import useFetchBins from "@/hooks/useFetchBins";
 import { Search } from 'lucide-react';
 
+type Bin = {
+    id: string,
+    date: string,
+    title: string,
+    description: string
+}
+
 export default function ViewPage() {
-    const { isLoading, data } = useFetch('bin');
+    const { isLoading, data } = useFetchBins('bin');
 
     return (
         <div>
@@ -24,7 +31,7 @@ export default function ViewPage() {
                 {isLoading ? (
                     <BinSkeleton></BinSkeleton>
                 ) : (
-                    data.map((bin, index) => (
+                    data.map((bin: Bin, index: number) => (
                         <BinCard title={bin.title} key={index} description={bin.description}></BinCard>
                     ))
                 )}
