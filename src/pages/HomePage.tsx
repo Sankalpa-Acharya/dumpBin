@@ -2,8 +2,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Input } from "@/components/ui/input"
 import { Button } from '@/components/ui/button';
 import TagsContainer from '@/components/TagsContainer';
-import { useToast } from '@/components/ui/use-toast';
-import { Loader, Users } from "lucide-react";
+import { Loader } from "lucide-react";
 import useCreateBin from "@/hooks/useCreateBin";
 import { useState } from "react";
 import { getDate } from "@/helper";
@@ -12,7 +11,6 @@ import { getDate } from "@/helper";
 type Tag = 'DBMS' | 'DAA' | 'OS' | 'Design Pattern' | ''
 
 export default function HomePage() {
-    const { toast } = useToast();
     const [title, setTitle] = useState<string>('');
     const [tagSelected, setTagSelected] = useState<Tag>('');
     const [content, setContent] = useState<string>('');
