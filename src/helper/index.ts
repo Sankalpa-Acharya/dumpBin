@@ -6,17 +6,18 @@ export const getDate = () => {
 }
 
 export const generateDocx = (text: string, name: string) => {
+    const lines = text.split('\n');
     const doc = new docx.Document({
         sections: [
             {
                 properties: {},
-                children: [
+                children: lines.map(line =>
                     new docx.Paragraph({
                         children: [
-                            new docx.TextRun(text),
+                            new docx.TextRun(line)
                         ]
                     })
-                ]
+                )
             }
         ]
     });
