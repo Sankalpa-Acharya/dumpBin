@@ -15,8 +15,6 @@ export default function HomePage() {
     const [tagSelected, setTagSelected] = useState<Tag>('');
     const [content, setContent] = useState<string>('');
     const { buttonState, createBin } = useCreateBin();
-
-
     return (
         <div>
             <div>

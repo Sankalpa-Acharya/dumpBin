@@ -5,10 +5,10 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Clipboard, Calendar, Eye } from 'lucide-react'
+import { Clipboard, Calendar, FileText } from 'lucide-react'
 import { Button } from "./ui/button"
 import { useToast } from "@/components/ui/use-toast"
-
+import { generateDocx } from "@/helper"
 type Props = {
     title: string,
     description: string,
@@ -30,8 +30,8 @@ export default function BinCard({ title, description, date, tag }: Props) {
                         }} variant='secondary'>
                             <Clipboard size={18} />
                         </Button>
-                        <Button variant='secondary'>
-                            <Eye size={18} />
+                        <Button variant='secondary' onClick={() => generateDocx(description, title)}>
+                            <FileText size={18} />
                         </Button>
                     </div>
                 </CardTitle>
